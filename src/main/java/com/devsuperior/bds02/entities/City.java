@@ -30,6 +30,10 @@ public class City {
 		this.name = name;
 	}
 
+	public City(Long id) {
+		this.id = id;
+	}
+
 	public Long getId() {
 		return id;
 	}
