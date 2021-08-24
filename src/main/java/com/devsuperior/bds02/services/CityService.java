@@ -1,6 +1,7 @@
 package com.devsuperior.bds02.services;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -38,7 +39,7 @@ public class CityService {
 		
 		List<City> result = repository.findAll(Sort.by("name"));
 		
-		return result.stream().map(x ->  new CityDTO(x) ).toList();
+		return result.stream().map(x ->  new CityDTO(x) ).collect(Collectors.toList());
 	}
 
 }
